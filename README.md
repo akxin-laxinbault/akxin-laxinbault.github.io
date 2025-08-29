@@ -23,3 +23,8 @@ This is the official music profile website for **Akxin Laxinbault**, showcasing 
   - Embedded Google Form for inquiries.
   - Fully responsive with seamless integration.
 
+## License
+
+This project uses the **Start Bootstrap Creative theme** under the [MIT License](https://opensource.org/licenses/MIT).
+
+Copyright (c) 2013-2023 Start Bootstrap LLC
