@@ -1,11 +1,23 @@
-const audio = document.getElementById("upcoming-audio");
-let hasPlayed = false;
+// Upcoming Music Controls
+document.addEventListener("DOMContentLoaded", () => {
+  const teaserBtn = document.getElementById("teaser-btn");
+  const musicInfo = document.getElementById("music-info");
+  const audio = document.getElementById("upcoming-audio");
+  const playPauseBtn = document.getElementById("play-pause-btn");
 
-function playOnScroll() {
-  if (!hasPlayed) {
-    audio.play().catch(err => console.log("Autoplay blocked:", err));
-    hasPlayed = true;
-  }
-}
+  teaserBtn.addEventListener("click", () => {
+    teaserBtn.style.display = "none";
+    musicInfo.classList.remove("hidden");
+    audio.play();
+  });
 
-window.addEventListener("scroll", playOnScroll);
+  playPauseBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      playPauseBtn.textContent = "⏸ Pause";
+    } else {
+      audio.pause();
+      playPauseBtn.textContent = "▶ Play";
+    }
+  });
+});

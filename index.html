@@ -19,9 +19,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body id="page-top">
+    <script src="js/custom.js"></script>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container px-4 px-lg-5">
@@ -71,23 +73,33 @@
         </div>
     </section>
     <!-- Upcoming Release Section -->
-    <section id="upcoming" class="py-5">
-        <div class="container text-center">
-            <h2 class="mb-4">Upcoming Release</h2>
-            <div class="music-card card mx-auto">
-                <div class="card-body">
-                    <h5 class="card-title">New Piano Piece</h5>
-                    <p class="card-text">Releasing soon on Spotify! 🎹</p>
-                    <audio src="assets/music/Turkish March.mp3" autoplay></audio>
+    <section id="upcoming" class="upcoming-section">
+        <div class="upcoming-card">
+            <div class="container text-center">
+                <h2>Upcoming Release</h2>
+                <hr class="divider" />
+                <button id="teaser-btn" class="teaser-btn">🎵 Wanna hear the upcoming music?</button>
+                <div id="music-info" class="music-info hidden">
+                    <h3 id="music-title">Piano Sonata No. 11 in A Major, K. 331: III. Rondo alla Turca (Turkish March)
+                    </h3>
+                    <p id="music-composer">Wolfgang Amadeus Mozart</p>
+                    <p id="music-date">Release Date: September 07, 2025</p>
+                    <button id="play-pause-btn" class="play-btn">⏸ Pause</button>
                 </div>
+
+                <audio id="upcoming-audio" loop>
+                    <source src="assets/music/Turkish March.mp3" type="audio/mpeg">
+                </audio>
             </div>
         </div>
     </section>
+
 
     <!-- Discography Section -->
     <section id="discography" class="py-5 bg-light">
         <div class="container text-center">
             <h2 class="mb-4">Discography</h2>
+            <hr class="divider" />
             <div class="spotify-embed">
                 <iframe style="border-radius:12px"
                     src="https://open.spotify.com/embed/artist/5TmqjlNvR0HTp0dIa0Qg8U?utm_source=generator&theme=0"
