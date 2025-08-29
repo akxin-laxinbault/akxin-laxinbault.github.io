@@ -144,7 +144,7 @@
                     <!-- Google Form Embed -->
                     <div class="contact-form-embed">
                         <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSfuFHDKwxjgMlqxR1mMeDwHeCVIdRyZWTHyhemWHU1d4IJNbg/viewform?embedded=true"
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSfuFHDKwxjgMlqxR1mMeDwHeCVIdRyZWTHyhemWHU1d4IJNbg/viewform?embedded=true&hl=en_US"
                             width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">
                             Loading…
                         </iframe>
@@ -156,9 +156,14 @@
 
     <!-- Footer-->
     <footer class="bg-light py-5">
-        <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div>
+        <div class="small text-center text-muted">
+            &copy; <span id="year"></span> Akxin Laxinbault
         </div>
+
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
