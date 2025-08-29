@@ -1,0 +1,45 @@
+/* Color Theme: Pastel Yellow, Music Sheet Style */
+:root {
+  --primary-bg: #fdf6e3;      /* Paper yellow */
+  --primary-color: #4B3832;   /* Dark brown text */
+  --accent-color: #e6c76e;    /* Soft yellow */
+}
+
+/* Body styling */
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-color);
+  font-family: 'Crimson Text', serif;
+}
+
+/* Section Titles */
+section h2 {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Music Card */
+.music-card {
+  max-width: 400px;
+  background: #fff8e7;
+  border-radius: 12px;
+  border: 1px solid #e6c76e;
+  transition: transform 0.3s ease;
+}
+
+.music-card:hover {
+  transform: scale(1.05);
+}
+
+/* Spotify Embed */
+.spotify-embed iframe {
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Audio Controls */
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
