@@ -83,6 +83,10 @@
     font-size: 32px; /* smaller icons on tablet/mobile */
     margin: 0 15px 10px 15px; /* less horizontal margin */
   }
+  .custom-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -91,8 +95,13 @@
     justify-content: center;
   }
   .masthead-icons a {
-    font-size: 28px; /* smaller for mobile */
+    font-size: 22px; /* smaller for mobile */
     margin: 0 10px 10px 10px;
+  }
+  .custom-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
   }
 }
 
