@@ -19,10 +19,6 @@
   transition: all 0.3s ease;
 }
 
-.upcoming-card:hover {
-  transform: translateY(-5px);
-}
-
 .teaser-btn, .play-btn {
   background: #ffcc80;
   border: none;
