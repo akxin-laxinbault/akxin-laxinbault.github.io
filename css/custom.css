@@ -1,22 +1,11 @@
 /* ==============================
    Upcoming Release Card Styling
    ============================== */
-.upcoming-section {
+.timeline-section {
   display: flex;
   justify-content: center;
   padding: 50px 20px;
   background: #fff8e1; /* pastel yellow */
-}
-
-.upcoming-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  width: 1300px;
-  text-align: center;
-  font-family: 'Georgia', serif;
-  transition: all 0.3s ease;
 }
 
 .teaser-btn, .play-btn {
