@@ -50,6 +50,61 @@
   }
 }
 
+/* Flex container for calendar + music */
+.upcoming-flex {
+  display: flex;
+  gap: 20px;                 /* default gap */
+  align-items: center;        /* vertically center music */
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: nowrap;          /* keep side by side by default */
+}
+
+/* Default (laptop/large screens) */
+@media (min-width: 1025px) {
+  .calendar-wrapper {
+    flex: 2 1 0;             /* 2/3 width */
+    max-width: 800px;         /* larger max for big screens */
+  }
+  .music-info {
+    flex: 1 1 0;             /* 1/3 width */
+    max-width: 600px;         /* keep readable */
+  }
+  .upcoming-flex {
+    gap: 150px;               /* more space on large screens */
+  }
+}
+
+/* Tablet (medium screens) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .calendar-wrapper {
+    flex: 2 1 0;             /* 2/3 width */
+    max-width: 700px;         /* cap for tablets */
+  }
+  .music-info {
+    flex: 1 1 0;             /* 1/3 width */
+    max-width: 350px;
+  }
+  .upcoming-flex {
+    gap: 30px;               /* moderate spacing */
+  }
+}
+
+/* Mobile (small screens) */
+@media (max-width: 768px) {
+  .upcoming-flex {
+    flex-direction: column;   /* stack vertically */
+    align-items: center;      /* horizontally center content */
+    gap: 20px;                /* vertical spacing */
+  }
+
+  .calendar-wrapper,
+  .music-info {
+    flex: 1 1 100%;           /* full width */
+    max-width: 100%;
+  }
+}
+
 /* ==============================
    Masthead Social Icons (Music Platforms)
    ============================== */

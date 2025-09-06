@@ -123,22 +123,29 @@
         <div class="text-center">
             <h2>Upcoming Release</h2>
             <hr class="divider" />
-            <div style="position: relative; width: 100%; margin: 0; padding: 0;">
-                <iframe id="calendar-embed"
-                    src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FManila&showCalendars=0&showTz=0&showPrint=0&title=Official%20Release%20Dates%20%7C%20Akxin%20Laxinbault&src=OTM1YmNmNTM2MGY4ODAxNWE3ZmM1MmFiYWNiMmZhYjQ0MmE4NmUyNjBjMDU4ZTIyYTZiODYwMGE0Mjk1MTBmY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23ef6c00&hl=en&mode=MONTH"
-                    style="width:100%; aspect-ratio: 4 / 3; border:1px solid #777; border-radius:20px;" frameborder="0"
-                    scrolling="no">
-                </iframe>
+
+            <!-- Flex container for calendar + music -->
+            <div class="upcoming-flex">
+                <!-- Calendar (left) -->
+                <div class="calendar-wrapper">
+                    <iframe id="calendar-embed"
+                        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FManila&showCalendars=0&showTz=0&showPrint=0&title=Official%20Release%20Dates%20%7C%20Akxin%20Laxinbault&src=OTM1YmNmNTM2MGY4ODAxNWE3ZmM1MmFiYWNiMmZhYjQ0MmE4NmUyNjBjMDU4ZTIyYTZiODYwMGE0Mjk1MTBmY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23ef6c00&hl=en&mode=MONTH"
+                        style="width:100%; height: 100%; aspect-ratio: 4 / 3.2; border:2px solid #F4623A; border-radius:20px;"
+                        frameborder="0" scrolling="no">
+                    </iframe>
+                </div>
+
+                <!-- Music Info (right) -->
+                <div id="music-info" class="music-info">
+                    <h3 id="music-title">
+                        Piano Sonata No. 11 in A Major, K. 331: III. Rondo alla Turca (Turkish March)
+                    </h3>
+                    <p id="music-composer">Wolfgang Amadeus Mozart</p>
+                    <p id="music-date">Release Date: September 07, 2025</p>
+                    <button id="play-pause-btn" class="play-btn">▷ Play</button>
+                </div>
             </div>
 
-
-            <div id="music-info" class="music-info">
-                <h3 id="music-title">Piano Sonata No. 11 in A Major, K. 331: III. Rondo alla Turca (Turkish March)
-                </h3>
-                <p id="music-composer">Wolfgang Amadeus Mozart</p>
-                <p id="music-date">Release Date: September 07, 2025</p>
-                <button id="play-pause-btn" class="play-btn">▷ Play</button>
-            </div>
             <audio id="upcoming-audio" loop>
                 <source src="assets/music/turkish-march-teaser.wav" type="audio/mpeg">
             </audio>
