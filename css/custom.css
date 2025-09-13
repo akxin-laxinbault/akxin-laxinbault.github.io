@@ -49,22 +49,30 @@
   flex-wrap: nowrap;          /* keep side by side by default */
 }
 
-/* Default (laptop/large screens) */
+/* ---------- Desktop (large screens) ---------- */
 @media (min-width: 1025px) {
-  .calendar-wrapper {
-    flex: 2 1 0;             /* 2/3 width */
-    max-width: 800px;         /* larger max for big screens */
-  }
-  .music-info {
-    flex: 1 1 0;             /* 1/3 width */
-    max-width: 600px;         /* keep readable */
-  }
   .upcoming-flex {
-    gap: 150px;               /* more space on large screens */
+    justify-content: space-between; /* push items outward */
+    gap: 100px;                         /* gap handled by spacing */
+    width: 100%;
+    padding: 0 40px;                /* side breathing room */
+    box-sizing: border-box;
+  }
+
+  .calendar-wrapper {
+    flex: 0 1 auto;
+    width: clamp(360px, 45vw, 900px);  /* expands left */
+    max-width: 900px;
+  }
+
+  .music-info {
+    flex: 0 1 auto;
+    width: clamp(260px, 28vw, 600px);  /* expands right */
+    max-width: 600px;
+    text-align: center;
   }
 }
 
-/* Tablet (medium screens) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .calendar-wrapper {
     flex: 2 1 0;             /* 2/3 width */
@@ -79,7 +87,6 @@
   }
 }
 
-/* Mobile (small screens) */
 @media (max-width: 768px) {
   .upcoming-flex {
     flex-direction: column;   /* stack vertically */
@@ -93,6 +100,7 @@
     max-width: 100%;
   }
 }
+
 
 /* ==============================
    Masthead Social Icons (Music Platforms)
