@@ -39,8 +39,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body id="home">
@@ -168,7 +168,7 @@
         </div>
     </section>
 
-    <!-- Contact-->
+    <!-- Contact -->
     <section class="page-section" id="contact">
         <div class="container px-4 px-lg-5">
             <div class="row justify-content-center">
@@ -176,34 +176,55 @@
                     <h2 class="mt-0">Reach Out</h2>
                     <hr class="divider" />
                     <p class="text-muted mb-5">
-                        Have a question or want to share your thoughts about my music? Fill out one of the forms below
-                        and I’ll
-                        get back to you promptly.
+                        Do you have any questions, suggestions, or requests for a piece you’d like me to play? Please
+                        don’t hesitate to reach out — I’d like to hear it!
                     </p>
                 </div>
             </div>
 
-            <!-- Two side-by-side forms -->
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="contact-form-embed">
-                        <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSfuFHDKwxjgMlqxR1mMeDwHeCVIdRyZWTHyhemWHU1d4IJNbg/viewform?embedded=true&hl=en_US"
-                            width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">
-                            Loading…
-                        </iframe>
+            <!-- Accordion -->
+            <div class="accordion" id="formsAccordion">
+
+                <!-- Contact Form -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingContact">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseContact" aria-expanded="false" aria-controls="collapseContact">
+                            Message Me
+                        </button>
+                    </h2>
+                    <div id="collapseContact" class="accordion-collapse collapse" aria-labelledby="headingContact"
+                        data-bs-parent="#formsAccordion">
+                        <div class="accordion-body">
+                            <div class="contact-form-embed">
+                                <iframe
+                                    src="https://docs.google.com/forms/d/e/1FAIpQLSfuFHDKwxjgMlqxR1mMeDwHeCVIdRyZWTHyhemWHU1d4IJNbg/viewform?embedded=true&hl=en_US"
+                                    width="100%" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6 mb-4">
-                    <div class="contact-form-embed">
-                        <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSeqAqp0gFeoxfsJ3cvPbJSowJ3piNOxwmqMq5wjvjxd-hUkvA/viewform?embedded=true&hl=en_US"
-                            width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">
-                            Loading…
-                        </iframe>
+                <!-- Piano Request Form -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingRequest">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseRequest" aria-expanded="false" aria-controls="collapseRequest">
+                            Request a Piano Piece
+                        </button>
+                    </h2>
+                    <div id="collapseRequest" class="accordion-collapse collapse" aria-labelledby="headingRequest"
+                        data-bs-parent="#formsAccordion">
+                        <div class="accordion-body">
+                            <div class="contact-form-embed">
+                                <iframe
+                                    src="https://docs.google.com/forms/d/e/1FAIpQLSeqAqp0gFeoxfsJ3cvPbJSowJ3piNOxwmqMq5wjvjxd-hUkvA/viewform?embedded=true&hl=en_US"
+                                    width="100%" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

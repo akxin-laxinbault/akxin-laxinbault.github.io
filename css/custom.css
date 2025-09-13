@@ -182,23 +182,58 @@
 
 .contact-form-embed iframe {
   width: 100%;
-  height: 1100px;
   border: none;
+  transition: height 0.6s ease;
 }
 
-@media (max-width: 992px) {
+/* Desktop */
+@media (min-width: 992px) {
   .contact-form-embed iframe {
-    height: 1100px; /* more height for stacked layout */
+    height: 1400px;
   }
 }
+
+/* Tablet */
+@media (max-width: 991px) and (min-width: 769px) {
+  .contact-form-embed iframe {
+    height: 1700px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .contact-form-embed iframe {
-    height: 1200px;
-  }
-}
-@media (max-width: 480px) {
-  .contact-form-embed iframe {
-    height: 1500px;
+    height: 1900px; /* give more vertical space */
   }
 }
 
+/* Small phones */
+@media (max-width: 480px) {
+  .contact-form-embed iframe {
+    height: 2200px;
+  }
+}
+
+/* Remove extra padding inside accordion body */
+.accordion-body {
+  padding: 0.5rem; /* default is 1.25rem, reduce for small screens */
+}
+
+/* Make iframe behave responsively */
+.contact-form-embed iframe {
+  max-width: 100%;
+  display: block;
+}
+
+/* Extra safeguard: no horizontal scroll on small screens */
+@media (max-width: 768px) {
+  .accordion-body {
+    padding: 0.05rem; /* even smaller padding */
+  }
+}
+
+.accordion {
+  border-radius: 16px;  /* adjust to taste */
+  overflow: hidden;     /* keeps children inside the curve */
+  border: 1.5px solid;
+}
