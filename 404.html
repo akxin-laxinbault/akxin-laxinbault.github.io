@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
+
+    <!-- Google Fonts: Merriweather -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         body,
         html {
@@ -12,11 +16,10 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            font-family: Arial, sans-serif;
+            font-family: 'Merriweather', serif;
             color: white;
             text-align: center;
             overflow: hidden;
-            /* prevent body scroll */
         }
 
         /* Scrollable image container */
@@ -59,34 +62,37 @@
                     rgba(92, 77, 66, 0.8) 100%);
             z-index: 2;
             pointer-events: none;
-            /* clicks pass through */
         }
 
         /* Fixed text + button overlay */
         .overlay {
             position: fixed;
-            bottom: 40px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
             z-index: 3;
+            max-width: 90%;
         }
 
         h1 {
-            font-size: 6rem;
+            font-size: 3.5rem;
+            /* smaller than before */
             margin: 0;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
         }
 
         p {
-            font-size: 1.5rem;
-            margin: 10px 0 20px;
+            font-size: 1.2rem;
+            /* smaller than before */
+            margin: 8px 0 18px;
+            line-height: 1.5;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 10px 20px;
             background: #ffffffcc;
             color: #333;
             text-decoration: none;
@@ -94,6 +100,8 @@
             font-weight: bold;
             transition: background 0.3s;
             cursor: pointer;
+            font-family: 'Merriweather', serif;
+            font-size: 0.95rem;
         }
 
         .btn:hover {
@@ -157,8 +165,10 @@
 
     <!-- Fixed overlay content -->
     <div class="overlay">
-        <h1>404</h1>
-        <p>Oops! This page doesn’t exist.</p>
+        <p>
+            Don’t mind him... he wasn’t practicing enough,<br>
+            so I locked him inside this 404 as punishment.
+        </p>
         <button class="btn" onclick="openModal()">Message Me</button>
     </div>
 
