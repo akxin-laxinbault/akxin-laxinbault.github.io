@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            /* prevent body scroll */
+        }
+
+        /* Scrollable image container */
+        .banner-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: auto;
+            z-index: 1;
+        }
+
+        .banner-image {
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain;
+            /* default for small screens */
+            display: block;
+        }
+
+        /* Desktop screens: force full width/height */
+        @media (min-width: 1024px) {
+            .banner-image {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        /* Overlay gradient */
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom,
+                    rgba(92, 77, 66, 0.8) 0%,
+                    rgba(92, 77, 66, 0.8) 100%);
+            z-index: 2;
+            pointer-events: none;
+            /* clicks pass through */
+        }
+
+        /* Fixed text + button overlay */
+        .overlay {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 3;
+        }
+
+        h1 {
+            font-size: 6rem;
+            margin: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 10px 0 20px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #ffffffcc;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #ffffff;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            height: 100%;
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal iframe {
+            flex: 1;
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Scrollable banner -->
+    <div class="banner-container">
+        <img src="assets/img/404-banner.webp" alt="404 Banner" class="banner-image">
+    </div>
+
+    <!-- Gradient overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Fixed overlay content -->
+    <div class="overlay">
+        <h1>404</h1>
+        <p>Oops! This page doesn’t exist.</p>
+        <button class="btn" onclick="openModal()">Message Me</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="formModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfuFHDKwxjgMlqxR1mMeDwHeCVIdRyZWTHyhemWHU1d4IJNbg/viewform?embedded=true&hl=en">
+                Loading…
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('formModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('formModal').style.display = 'none';
+        }
+        window.onclick = function (event) {
+            const modal = document.getElementById('formModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
