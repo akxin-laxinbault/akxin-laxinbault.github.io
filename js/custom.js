@@ -1,6 +1,6 @@
 // Upcoming Music Controls
 document.addEventListener("DOMContentLoaded", () => {
-  const gistUrl = "https://gist.github.com/akxin-laxinbault/00437e52b1882682c349ee2bbe37c7f9/raw/akxin-contents.json";
+  const gistUrl = "https://gist.githubusercontent.com/akxin-laxinbault/00437e52b1882682c349ee2bbe37c7f9/raw/akxin-contents.json";
 
   fetch(gistUrl)
     .then(response => response.json())
