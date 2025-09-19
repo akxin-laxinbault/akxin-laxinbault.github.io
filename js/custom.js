@@ -1,19 +1,35 @@
 // Upcoming Music Controls
 document.addEventListener("DOMContentLoaded", () => {
-  const audio = document.getElementById("upcoming-audio");
-  const playPauseBtn = document.getElementById("play-pause-btn");
+  const gistUrl = "https://gist.github.com/akxin-laxinbault/00437e52b1882682c349ee2bbe37c7f9/raw/akxin-contents.json";
 
-  // Toggle play/pause
-  playPauseBtn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play();
-      playPauseBtn.textContent = "❚❚ Pause";
-    } else {
-      audio.pause();
-      playPauseBtn.textContent = "▷ Play";
-    }
-  });
+  fetch(gistUrl)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("music-title").textContent = data.title;
+      document.getElementById("music-composer").textContent = data.composer;
+      document.getElementById("music-date").textContent = "Release Date: " + data.release_date;
+
+      // Update the audio source to point to your Google Drive teaser link
+      const audio = document.getElementById("upcoming-audio");
+      audio.src = data.link;
+
+      // Simple play/pause button logic
+      const playBtn = document.getElementById("play-pause-btn");
+      playBtn.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          playBtn.textContent = "❚❚ Pause";
+        } else {
+          audio.pause();
+          playBtn.textContent = "▷ Play";
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Error loading upcoming release data:", error);
+    });
 });
+
 
 // Forms
 document.addEventListener('DOMContentLoaded', function () {
@@ -31,3 +47,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// For updating contens
