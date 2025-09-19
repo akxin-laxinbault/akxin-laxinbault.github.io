@@ -9,11 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("music-composer").textContent = data.composer;
       document.getElementById("music-date").textContent = "Release Date: " + data.release_date;
 
-      // Update the audio source to point to your Google Drive teaser link
-      const audio = document.getElementById("upcoming-audio");
-      audio.src = data.link;
+      // Fix Dropbox link: change ?dl=0 → ?dl=1
+      const fixedLink = data.link.replace("dl=0", "dl=1");
 
-      // Simple play/pause button logic
+      const audio = document.getElementById("upcoming-audio");
+      audio.src = fixedLink;
+      audio.load();
+
       const playBtn = document.getElementById("play-pause-btn");
       playBtn.addEventListener("click", () => {
         if (audio.paused) {
@@ -25,11 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     })
-    .catch(error => {
-      console.error("Error loading upcoming release data:", error);
-    });
+    .catch(err => console.error("Error loading upcoming release data:", err));
 });
-
 
 // Forms
 document.addEventListener('DOMContentLoaded', function () {
