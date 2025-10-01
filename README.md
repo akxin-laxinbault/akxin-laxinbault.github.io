@@ -2,6 +2,8 @@
 
 This is the official music profile website for **Akxin Laxinbault**, showcasing classical piano performances, upcoming releases, and discography across multiple platforms. Built with **Bootstrap 5** and custom HTML, CSS, and JS.
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U1PW5XJ)
+
 ---
 
 ## Features
