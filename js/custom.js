@@ -9,23 +9,26 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("music-composer").textContent = data.composer;
       document.getElementById("music-date").textContent = "Release Date: " + data.release_date;
 
-      // Fix Dropbox link: change ?dl=0 → ?dl=1
-      const fixedLink = data.link.replace("dl=0", "dl=1");
-
-      const audio = document.getElementById("upcoming-audio");
-      audio.src = fixedLink;
-      audio.load();
-
       const playBtn = document.getElementById("play-pause-btn");
-      playBtn.addEventListener("click", () => {
-        if (audio.paused) {
-          audio.play();
-          playBtn.textContent = "❚❚ Pause";
-        } else {
-          audio.pause();
-          playBtn.textContent = "▷ Play";
-        }
-      });
+      const audio = document.getElementById("upcoming-audio");
+
+      if (data.link && data.link.trim() !== "") {
+        const fixedLink = data.link.replace("dl=0", "dl=1");
+        audio.src = fixedLink;
+        audio.load();
+
+        playBtn.addEventListener("click", () => {
+          if (audio.paused) {
+            audio.play();
+            playBtn.textContent = "❚❚ Pause";
+          } else {
+            audio.pause();
+            playBtn.textContent = "▷ Play";
+          }
+        });
+      } else {
+        playBtn.style.display = "none"; // only hide if no link
+      }
     })
     .catch(err => console.error("Error loading upcoming release data:", err));
 });
