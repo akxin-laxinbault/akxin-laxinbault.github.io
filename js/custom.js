@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       document.getElementById("music-title").textContent = data.title;
       document.getElementById("music-composer").textContent = data.composer;
-      document.getElementById("music-date").textContent = "Release Date: " + data.release_date;
 
       const playBtn = document.getElementById("play-pause-btn");
       const audio = document.getElementById("upcoming-audio");
@@ -49,5 +48,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-
-// For updating contens
